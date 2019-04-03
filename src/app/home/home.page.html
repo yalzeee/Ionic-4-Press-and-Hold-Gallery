@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon name='trash'><ion-badge>{{ this.selected.length }}</ion-badge></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let item of myArray; let i = index" (press)="onHold($event,item)" (click)="onClick($event,item)">
+          <h2>{{ item }}</h2>
+        </ion-item>
+        <div class="nothing" *ngIf="myArray.length < 1">
+          <h2>
+              Nothing Here
+          </h2>
+        </div>
+      </ion-list>
+</ion-content>
