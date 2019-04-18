@@ -10,10 +10,17 @@ export class HomePage {
   highlight= {
 
   }
-  myArray=['Item1','Item2','Item3','Item4','Item5','Item6']
+  myArray=['Item1','Item2','Item3','Item4','Item5','Item6','Item7','Item8','Item9',"Item10","Item11","Item12","Item13","Item14",'Item15']
   constructor(public renderer: Renderer2){
     this.selected = [];
 
+  }
+  delete(){
+    this.selected.forEach(element => {
+      let index = this.selected.indexOf(element);
+      this.selected.splice(index,1)
+    });
+    
   }
   onHold(event, item) {
     console.log('Held')
